@@ -37,7 +37,12 @@
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
+            overflow-x: hidden;
         }
+
+        /* Prevent horizontal overflow on small screens */
+        html { overflow-x: hidden; }
+        img, svg, canvas, video { max-width: 100%; height: auto; display: block; }
 
         /* Accessibility - Skip to main content */
         .skip-link {
@@ -793,6 +798,15 @@
             nav {
                 position: relative;
             }
+        }
+
+        /* Extra-small devices: tighten paddings and force single-column grids to avoid overflow */
+        @media (max-width: 360px) {
+            nav { padding: 0.5rem 1rem; }
+            .section-container { padding-left: 1rem; padding-right: 1rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .edu-grid { grid-template-columns: 1fr; }
+            .lang-grid { grid-template-columns: 1fr; }
         }
 
         /* Utilities */
